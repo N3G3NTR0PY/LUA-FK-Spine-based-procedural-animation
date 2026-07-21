@@ -86,5 +86,10 @@ return {
             segmentPos[i + 1][1] = segmentPos[i + 1][1] + (targetX - segmentPos[i+1][1]) * damping
             segmentPos[i + 1][2] = segmentPos[i + 1][2] + (targetY - segmentPos[i+1][2]) * damping
         end
+    end,
+
+    moveObject = function(pos, speed, movementDir)
+        pos[1] = pos[1] + movementDir[1] * speed
+        pos[2] = pos[2] + movementDir[2] * speed
     end
 }

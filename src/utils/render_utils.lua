@@ -146,5 +146,10 @@ return {
             end
         end
         textField('HEAD', {segmentPos[1][1], segmentPos[1][2]}, colors, false, size)
+    end,
+
+    drawDot = function(pos, color, thickness)
+        love.graphics.setColor(color)
+        love.graphics.circle('fill', pos[1], pos[2], thickness)
     end
 }

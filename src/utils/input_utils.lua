@@ -1,7 +1,6 @@
 return {
-    updateMovementDir = function(dir)
-        dir[1] = 0
-        dir[2] = 0
+    getMovementDir = function()
+        local dir = {0, 0}
 
         if love.keyboard.isDown('w') then 
             dir[2] = dir[2] - 1
@@ -15,5 +14,7 @@ return {
         if love.keyboard.isDown('d') then
             dir[1] = dir[1] + 1
         end
+
+        return dir
     end
 }

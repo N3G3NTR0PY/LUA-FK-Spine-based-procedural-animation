@@ -2,6 +2,7 @@ local Player = require('src.classes.player')
 local Entity = require('src.classes.entity')
 -- helpers
 local physics = require('src.utils.physics_utils')
+local input = require('src.utils.input_utils')
 -- configs
 local player = 'src.config.player_config'
 local lizard = 'src.config.entities.lizard_config'
@@ -33,7 +34,7 @@ end
 
 -- update
 function love.update(dt)
-    newPlayer:update(dt)
+    newPlayer:update(dt, input.getMovementDir())
     newEntity:setTarget(newPlayer.pos)
     newEntity:update(dt)
 end

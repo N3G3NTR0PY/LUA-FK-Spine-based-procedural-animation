@@ -1,6 +1,5 @@
 local renderer = require('src.utils.render_utils')
 local physics = require('src.utils.physics_utils')
-local input = require('src.utils.input_utils')
 local colors = require('src.config.color_table')
 
 local Player = {}
@@ -24,10 +23,6 @@ function Player.new(playerConfig, pos, size, speed)
 end
 
 -- runtime funcs
-function Player:setTarget(pos)
-    self.targetPos = pos
-end
-
 function Player:setSpeed(newSpeed)
     self.speed = newSpeed
 end
@@ -42,8 +37,8 @@ function Player:draw()
 end
 
 -- update
-function Player:update(deltaTime)
-    input.updateMovementDir(self.movementDir)
+function Player:update(deltaTime, dir)
+    self.movementDir = dir
     physics.moveObject(self.pos, self.speed * deltaTime, self.movementDir)
 end
 

@@ -33,7 +33,7 @@ function Player:setSpeed(newSpeed)
 end
 
 function Player:setPos(newPos)
-    self.speed = newPos
+    self.pos = newPos
 end
 
 -- render
